@@ -131,7 +131,7 @@ echo "🌐 Downloading Netdata installer script..."
 sudo wget https://get.netdata.cloud/kickstart.sh -O /tmp/kickstart.sh
 
 echo "⚙️ Running Netdata installer..."
-sudo bash /tmp/kickstart.sh
+sudo bash /tmp/kickstart.sh --yes
 
 echo "✅ Netdata installation complete."
 
@@ -184,7 +184,10 @@ echo "🧹 Removing unnecessary packages..."
 sudo apt autoremove -y
 
 ### Apply netplan configuration
-echo "⚙️ Applying netplan configuration..."
-sudo netplan apply
-
 echo "✅ System update, cleanup, and network configuration complete."
+
+sleep 3  # Pause for 3 seconds
+
+echo "⚠️ System is shutting down. Please create a snapshot before rebooting this server back up."
+sleep 5  # Optional pause to let the message be seen
+shutdown now
