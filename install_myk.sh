@@ -126,12 +126,15 @@ echo "✅ Cockpit installed and running. Access it via: https://<your-server-ip>
 
 sleep 3  # Pause for 3 seconds
 
-### Download and run Netdata installer
 echo "🌐 Downloading Netdata installer script..."
-sudo wget https://get.netdata.cloud/kickstart.sh -O /tmp/kickstart.sh
+wget -q https://get.netdata.cloud/kickstart.sh -O ./kickstart.sh
 
 echo "⚙️ Running Netdata installer..."
-sudo bash /tmp/kickstart.sh --yes
+sudo bash ./kickstart.sh --yes
+
+# Cleanup after installation
+echo "🧹 Deleting installer script..."
+rm -f ./kickstart.sh
 
 echo "✅ Netdata installation complete."
 
