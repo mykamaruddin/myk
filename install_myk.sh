@@ -5,7 +5,7 @@
 # ------------------------------------------------------------
 
 # Set default password and network variables
-default_password="ict01@Unigroup"
+default_password="B@79f61O51"
 server_ip=$(ip route get 1 | awk '{print $7; exit}')
 
 print_step() {
