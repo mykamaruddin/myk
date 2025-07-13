@@ -112,8 +112,8 @@ network:
         - 10.9.19.${LAST_OCTET}/24
       nameservers:
         addresses:
-          - 10.9.19.200
-          - 10.9.19.210
+          - 10.9.19.7
+          - 10.9.19.8
           - 8.8.8.8
           - 8.8.4.4
       routes:
@@ -132,7 +132,7 @@ iface ${ADAPTER_ID} inet static
     address 10.9.19.${LAST_OCTET}
     netmask 255.255.255.0
     gateway 10.9.19.80
-    dns-nameservers 10.9.19.200 10.9.19.210 8.8.8.8 8.8.4.4
+    dns-nameservers 10.9.19.7 10.9.19.8 8.8.8.8 8.8.4.4
 EOF
 
 print_step "✅ /etc/network/interfaces written with static config for $ADAPTER_ID"
